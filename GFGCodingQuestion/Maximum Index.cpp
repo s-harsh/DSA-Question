@@ -34,3 +34,25 @@ class Solution{
         return ans;
     }
 };
+
+// Approach 3
+// Get TLE at last test case 🥲
+// 230 /231 Passed
+// Time Limit Exceeded
+class Solution {
+public:
+    int maxIndexDiff(int arr[], int n) {
+        int ans = 0, i = 0, j = n - 1;
+        while (i <= j) {
+            if (arr[i] <= arr[j]) {
+                ans = max(ans, j - i);
+                j = n - 1;
+                i++;
+            } else {
+                j--;
+            }
+        }
+        return ans;
+    }
+};
+
